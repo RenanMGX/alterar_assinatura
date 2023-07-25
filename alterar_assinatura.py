@@ -80,8 +80,8 @@ try:
     iniciar()
 except Exception as error:
     try:
-        caminho = r"\\server008\G\ARQ_PATRIMAR\WORK\INVENTARIO\erros das assinaturas\erros.txt"
+        caminho = r"\\server008\G\ARQ_PATRIMAR\WORK\INVENTARIO\erros das assinaturas\erros.csv"
         with open(caminho, "a") as arqui:
-            arqui.write(f"no dia ''{data}'' o ''{nome_computador}'' do usuario:''{nome_usuario}'' apresentou o seguinte erro ao atualizar a assinatura: {error} \n")
+            arqui.write(f"{datetime.now().strftime('%d/%m/%Y')};{datetime.now().strftime('%H:%M:%S')};{nome_computador};{nome_usuario};{error}\n")
     except:
         pass
